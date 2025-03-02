@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_quiz_app/quiz.dart';
 
 void main() {
   runApp(MyMainView());
@@ -30,48 +31,13 @@ class MainScreen extends StatelessWidget {
                   end: Alignment.centerRight),
             ),
             child: AppBar(
-              title: Text("FLUTTER QUIZ APP"),
+              title: Text("FLUTTER QUIZ APP", style: TextStyle(color: Colors.white),),
               backgroundColor: Colors.transparent,
               elevation: 0,
             ),
           ),
         ),
-        body: Container(
-          padding: EdgeInsets.all(64),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-                colors: [Colors.deepPurple, Colors.indigo],
-                begin: Alignment.bottomCenter,
-                end: Alignment.topCenter),
-          ),
-          child: Column(
-            children: [
-              Image(image: AssetImage('assets/images/quiz-logo.png')),
-              SizedBox(
-                height: 36,
-              ),
-              Text(
-                "Learn Flutter the fun way!",
-                style: TextStyle(color: Colors.white, fontSize: 20),
-              ),
-              SizedBox(
-                height: 12,
-              ),
-              TextButton(
-                onPressed: startButton,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12),
-                  child: Text(
-                    "Start Now!",
-                  ),
-                ),
-                style: ButtonStyle(
-                    backgroundColor:
-                        MaterialStateProperty.all<Color>(Colors.white)),
-              ),
-
-            ],
-          ),
-        ));
+        body: Quiz()
+    );
   }
 }
