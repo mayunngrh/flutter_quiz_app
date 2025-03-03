@@ -37,8 +37,13 @@ class _QuizState extends State<Quiz>{
     //print("NILAI SELECTED ANSWER: $selectedAnswer");
     print("NILAI SELECTED ANSWER LENGTH: ${selectedAnswer.length}");
     print("NILAI QUESTIONS LENGTH: ${questions.length}");
+  }
 
-
+  void restart(){
+    setState(() {
+      currentScreen = 'start-screen';
+      selectedAnswer = [];
+    });
   }
 
   @override
@@ -53,12 +58,12 @@ class _QuizState extends State<Quiz>{
         screenWidget = QuizScreen(chooseAnswer);
         break;
       case "result-screen":
-        screenWidget = ResultScreen(selectedAnswer);
+        screenWidget = ResultScreen(restart,selectedAnswer);
         break;
     }
 
     return Container(
-      padding: EdgeInsets.all(64),
+      padding: EdgeInsets.all(36),
       decoration: BoxDecoration(
         gradient: LinearGradient(
             colors: [Colors.deepPurple, Colors.indigo],
