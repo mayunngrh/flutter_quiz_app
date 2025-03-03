@@ -151,7 +151,7 @@ class ResultScreen extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    "Play Again",
+                    "Restart The Quiz!",
                     style: GoogleFonts.montserrat(
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
